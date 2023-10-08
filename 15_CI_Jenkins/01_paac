@@ -1,0 +1,34 @@
+// this is my first CI Declarative approach. 
+// this pipeline as a code was pasted inn the jenkins ui at pipeline and it worked.
+
+pipeline {
+    agent any
+    tools{
+        maven "MAVEN3"
+        jdk "OracleJDK8"
+    }
+    stages{
+        stage('Fetch code'){
+            steps{
+                git branch: 'vp-rem', url: 'https://github.com/devopshydclub/vprofile-project.git'
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'mvn install -DskipTests'
+            }
+            post{
+                success{
+                    echo 'Now Archiving...'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
+            }
+        }
+
+        stage('Unit Tests'){
+            steps{
+                sh 'mvn test'
+            }
+        }
+    }
+}
