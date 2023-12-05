@@ -1,0 +1,18 @@
+web01 ansible_host=172.31.23.156 ansible_user=centos ansible_ssh_private_key_file=vprofile-key.pem
+web02 ansible_host=172.31.19.223 ansible_user=centos ansible_ssh_private_key_file=vprofile-key.pem
+db01 ansible_host=172.31.21.99 ansible_user=centos ansible_ssh_private_key_file=vprofile-key.pem
+
+
+
+# Since Ansible 2.12 (core):
+# To generate an example config file (a "disabled" one with all default settings, commented out):
+#               $ ansible-config init --disabled > ansible.cfg
+#
+# Also you can now have a more complete file by including existing plugins:
+# ansible-config init --disabled -t all > ansible.cfg
+
+# For previous versions of Ansible you can check for examples in the 'stable' branches of each version
+# Note that this file was always incomplete  and lagging changes to configuration settings
+
+# for example, for 2.9: https://github.com/ansible/ansible/blob/stable-2.9/examples/ansible.cfg
+host_key_checking = False

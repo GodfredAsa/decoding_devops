@@ -1,0 +1,9 @@
+Ansible file module is used to manage the permissions and properties of file 
+some example of the modules 
+- archive 
+- copy
+- fetch
+- find a file 
+
+ANSIBLE COMMAND FOR CHECKING YAML SYNTAX
+ansible-playbook provisioning.yaml --syntax-check

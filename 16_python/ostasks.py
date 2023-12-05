@@ -17,7 +17,7 @@ for user in userlist:
     exitcode = os.system("id {}".format(user))
     if exitcode != 0:
         print("==========================================")
-        print("{} does not exist, Addin user.".format(user))
+        print("{} does not exist, Adding user.".format(user))
         os.system("useradd {}".format(user))
     else:
         print("==========================================")
