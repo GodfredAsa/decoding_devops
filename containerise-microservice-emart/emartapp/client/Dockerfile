@@ -1,4 +1,4 @@
-# THIS IS A MULTI-STAGE DOCKER FILE 
+# THIS IS A MULTI-STAGE DOCKER FILE
 FROM node:14 AS web-build
 WORKDIR /usr/src/app
 COPY ./ ./client
